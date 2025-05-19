@@ -1,5 +1,5 @@
 import { getCaseNoteSearchResults } from "@/lib/queries/getCaseNoteSearchResults";
-import CaseNoteSearch from "./CaseNoteSearch";
+// import CaseNoteSearch from "./CaseNoteSearch";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

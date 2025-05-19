@@ -1,6 +1,6 @@
-import { getAllClients } from "@/lib/queries/getAllClients";
-import ClientSearch from "./ClientSearch";
-import { getClientSearchResults } from "@/lib/queries/getClientSearchResults";
+// import { getAllClients } from "@/lib/queries/getAllClients";
+// import ClientSearch from "./ClientSearch";
+// import { getClientSearchResults } from "@/lib/queries/getClientSearchResults";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -8,11 +8,11 @@ export const metadata: Metadata = {
 };
 
 export default async function Clients() {
-//   {
-//   searchParams,
-// }: {
-//   searchParams: Promise<{ [key: string]: string | undefined }>;
-// }
+  //   {
+  //   searchParams,
+  // }: {
+  //   searchParams: Promise<{ [key: string]: string | undefined }>;
+  // }
   // const params = await searchParams;
   // const searchText = params.searchText;
   // if (!searchText) {
