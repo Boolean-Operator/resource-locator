@@ -7,29 +7,31 @@ export const metadata: Metadata = {
   title: "Client Search",
 };
 
-export default async function Clients({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
-  const params = await searchParams;
-  const searchText = params.searchText;
-  if (!searchText) {
-    const results = await getAllClients();
-    return (
-      <div>
-        <ClientSearch />
-        <p>{JSON.stringify(results)}</p>
-      </div>
-    );
-  }
+export default async function Clients() {
+//   {
+//   searchParams,
+// }: {
+//   searchParams: Promise<{ [key: string]: string | undefined }>;
+// }
+  // const params = await searchParams;
+  // const searchText = params.searchText;
+  // if (!searchText) {
+  //   const results = await getAllClients();
+  //   return (
+  //     <div>
+  //       <ClientSearch />
+  //       <p>{JSON.stringify(results)}</p>
+  //     </div>
+  //   );
+  // }
 
-  const results = await getClientSearchResults(searchText);
+  // const results = await getClientSearchResults(searchText);
 
   return (
     <div>
-      <ClientSearch />
-      <p>{JSON.stringify(results)}</p>
+      <h1>Client Page</h1>
+      {/* <ClientSearch /> */}
+      {/* <p>{JSON.stringify(results)}</p> */}
     </div>
   );
 }

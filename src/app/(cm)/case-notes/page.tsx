@@ -6,19 +6,21 @@ export const metadata: Metadata = {
   title: "Case Note Search",
 };
 
-export default async function CaseNotes({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
-  const params = await searchParams;
-  const searchText = params.searchText;
+export default async function CaseNotes() {
+  //   {
+  //   searchParams,
+  // }: {
+  //   searchParams: Promise<{ [key: string]: string | undefined }>;
+  // }
+  // const params = await searchParams;
+  // const searchText = params.searchText;
+  const searchText = "";
 
   const results = await getCaseNoteSearchResults(searchText);
 
   return (
     <div>
-      <CaseNoteSearch />
+      {/* <CaseNoteSearch /> */}
       <ul>
         {results.map((note) => (
           <li
