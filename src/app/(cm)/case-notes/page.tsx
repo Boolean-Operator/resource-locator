@@ -11,7 +11,8 @@ export default async function CaseNotes({
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const { searchText } = await searchParams;
+  const params = await searchParams;
+  const searchText = params.searchText;
 
   const results = await getCaseNoteSearchResults(searchText);
 

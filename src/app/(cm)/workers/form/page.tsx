@@ -10,7 +10,9 @@ export default async function WorkerFormPage({
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
   try {
-    const { workerId } = await searchParams;
+    // const { workerId } = await searchParams;
+    const params = await searchParams;
+    const workerId = params.workerId;
 
     // Edit client form
     if (workerId) {

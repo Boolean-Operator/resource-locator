@@ -12,7 +12,8 @@ export default async function Clients({
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const { searchText } = await searchParams;
+  const params = await searchParams;
+  const searchText = params.searchText;
   if (!searchText) {
     const results = await getAllClients();
     return (

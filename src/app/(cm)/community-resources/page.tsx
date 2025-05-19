@@ -13,7 +13,9 @@ export default async function CommunityResourcesPage({
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
-  const query = await searchParams;
+  // const query = await searchParams;
+  const params = await searchParams;
+  const query = params.query;
   const parseResult = serviceFiltersSchema.safeParse(query);
   const results = parseResult.success
     ? await getCommunityResourceByService(parseResult.data.services)
