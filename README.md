@@ -1,4 +1,4 @@
-# Life Coach - Case Manager Platform
+# Resource Locator - A Subsection of the Case Manager Platform
 
 The Social and Clinical Case Manager platform is an innovative hybrid platform turning health IT toward a holistic patient-client approach.The case manager platform is built to assist clinical and social services case managers with care providers directives g and coordinating client interactions to drive better client and patient outcomes.
 
