@@ -1,0 +1,18 @@
+export const CommunityServices = [
+  { id: "housingPlacement", description: "Housing Placement" },
+  { id: "housingFunding", description: "Housing Funding" },
+  { id: "jobSearch", description: "Job Search" },
+  { id: "wfd", description: "Workforce Development" },
+  { id: "careerTraining", description: "Career Training" },
+  { id: "academicLifeSkills", description: "Academic and Life Skills" },
+  { id: "rxBenefits", description: "Prescriptions and Benefits" },
+  { id: "bHmHCounsel", description: "Behavioral and Mental Health Counseling" },
+  { id: "bHmHReferral", description: "Behavioral and Mental Health Referral" },
+  { id: "soberLivingRecovery", description: "Sober Living Recovery" },
+  { id: "caseManagement", description: "Case Management" },
+  { id: "idCards", description: "Id Cards & Governmant Documents" },
+  { id: "foodMeals", description: "Food and Meals" },
+  { id: "clothes", description: "Clothing" },
+  { id: "directTransport", description: "Direct Transportation" },
+  { id: "busTickets", description: "Bus Tickets" },
+];
