@@ -6,24 +6,29 @@ import CaseNoteForm from "./CaseNoteForm";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { Users, init as KindeInit } from "@kinde/management-api-js";
 
-export async function generateMetadata({
-  searchParams,
-}: {
-  searchParams: Promise<{ [key: string]: string | undefined }>;
-}) {
-  const { caseNoteId } = await searchParams;
-  if (!caseNoteId) return { title: "New Case Note" };
-  return { title: `Edit Case Note #${caseNoteId}` };
-}
+// export async function generateMetadata({
+//   searchParams,
+// }: {
+//   searchParams: Promise<{ [key: string]: string | undefined }>;
+// }) {
+//   const { caseNoteId } = await searchParams;
+//   if (!caseNoteId) return { title: "New Case Note" };
+//   return { title: `Edit Case Note #${caseNoteId}` };
+// }
 
 export default async function CaseNoteFormPage({
   searchParams,
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
+  const { getPermission, getUser } = getKindeServerSession();
+  const [managerPermission, user] = await Promise.all([
+    getPermission("manager"),
+    getUser(),
+  ]);
+  const isManager = managerPermission?.isGranted;
+  const { clientId, caseNoteId } = await searchParams;
   try {
-    const { clientId, caseNoteId } = await searchParams;
-
     if (!clientId && !caseNoteId) {
       return (
         <>
@@ -34,13 +39,6 @@ export default async function CaseNoteFormPage({
         </>
       );
     }
-
-    const { getPermission, getUser } = getKindeServerSession();
-    const [managerPermission, user] = await Promise.all([
-      getPermission("manager"),
-      getUser(),
-    ]);
-    const isManager = managerPermission?.isGranted;
 
     // New Note Form
     if (clientId) {
