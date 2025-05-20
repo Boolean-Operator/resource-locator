@@ -18,9 +18,8 @@ export default async function ClientFormPage({
 }: {
   searchParams: Promise<{ [key: string]: string | undefined }>;
 }) {
+  const { clientId } = await searchParams;
   try {
-    const { clientId } = await searchParams;
-
     // Edit client form
     if (clientId) {
       const client = await getClient(parseInt(clientId));
